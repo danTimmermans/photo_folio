@@ -1,0 +1,24 @@
+#pageContent.home{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    @include media-breakpoint-up("md"){
+        justify-content: flex-end;
+    }
+    #pictInfo{
+        background-color: color("jade-dust");
+        @include padding(all, 40px);
+        width: 300px;
+        height: 200px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-end;
+        position: relative;
+        h1, p{
+            color: color("light-blue-ballerina");
+        }
+        h1{
+            font-size: map-get($heading-font-sizes , 3 );
+        }
+    }
+}

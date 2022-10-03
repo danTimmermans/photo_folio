@@ -1,0 +1,36 @@
+main{
+    background-color: color("jade-dust");
+    @include padding("all", 20px);
+    color: color("light-blue-ballerina");
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        align-items: start;
+        grid-auto-flow: row;
+        grid-gap: 20px;
+        li{
+            padding: 10px;
+            background-color: rgba(200, 214, 229,1.0);
+            a{
+                background-color: transparent;
+                h2{
+                    display: block;
+                    font-size: map-get($heading-font-sizes , 2 );
+                    font-weight: bold;
+                }
+                img{
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+        }
+        @include media-breakpoint-up("lg"){
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include media-breakpoint-up("xl"){
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}

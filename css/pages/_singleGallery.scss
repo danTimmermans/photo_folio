@@ -1,0 +1,46 @@
+#singleGallery{
+    li{
+        overflow: hidden;
+        height: auto;
+        img{
+            max-width: 100%;
+            height: auto;
+            border: solid 5px color("light-blue-ballerina");
+        }
+    }
+
+    ul{
+        @include media-breakpoint-up("md"){
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+        }
+        @include media-breakpoint-up("lg"){
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}
+#galleryContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s, visibility 1s;
+    img{
+        max-height: 80%;
+        max-width: 100%;
+    }
+}
+#galleryContainer.visible {
+    opacity: 1;
+    visibility: visible;
+}
